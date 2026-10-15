@@ -48,7 +48,7 @@ class PRAnalysis(BaseModel):
     comments: list[ReviewComment] = Field(default_factory=list)
     confidence: float = Field(
         ge=0.0, le=1.0,
-        description="Self-reported confidence that the review is complete and correct",
+        description="Confidence that this review is safe to post without additional human context",
     )
     confidence_reasoning: str = Field(
         description="Why the model picked that confidence value"
